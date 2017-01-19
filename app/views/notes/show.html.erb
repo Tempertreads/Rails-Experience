@@ -1,0 +1,24 @@
+<p>
+  <%- #the strong tag is used for important text in html %>
+  <%- #note.title and note.text are used to display parameters in the note model %>
+  <strong>Title:</strong>
+  <%= @note.title %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @note.text %>
+</p>
+
+<h2> Responses </h2>
+<%-# using a partial to display comments %>
+<%= render @note.responses %>
+
+
+<%- #Allows the option to leave responses to notes %>
+<h2>Add a Response</h2>
+<%= render 'responses/form' %>
+
+<%- # link from a single note back to index page with all notes %>
+<%= link_to 'Edit', edit_note_path(@note) %> |
+<%= link_to 'Back', notes_path %>

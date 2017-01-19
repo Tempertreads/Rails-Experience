@@ -1,0 +1,16 @@
+<%- # partial used to show all the responses to a note %>
+<p>
+  <strong> Responder: </strong>
+  <%= response.responder %>
+</p>
+
+<p>
+  <strong> Response: </strong>
+  <%= response.body %>
+</p>
+
+<p>
+  <%= button_to 'Destroy Response', [response.note, response],
+                method: :delete,
+                data: {confirm: 'Are you sure?' } %>
+</p>

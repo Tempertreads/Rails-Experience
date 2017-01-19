@@ -1,0 +1,15 @@
+<%- # this is the partial for the new response section %>
+<%- # the form_for creates nested routes for responses eg. notes/1/responses   %>
+<%= form_for([@note, @note.responses.build]) do |f| %>
+    <p>
+      <%= f.label :responder %> <br>
+      <%= f.text_field :responder %>
+    </p>
+    <p>
+      <%= f.label :body %><br>
+      <%= f.text_area :body %>
+    </p>
+    <p>
+      <%= f.submit %>
+    </p>
+<% end %>
